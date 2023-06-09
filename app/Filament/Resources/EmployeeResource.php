@@ -56,6 +56,7 @@ class EmployeeResource extends Resource
                         }
                         return $state->city->pluck('name','id');
                     })
+                    ->reactive()->required()->searchable()
                     ->reactive()->required()->searchable(),
 
                 Forms\Components\Select::make('department_id')
@@ -71,7 +72,7 @@ class EmployeeResource extends Resource
                 ->removeUploadedFileButtonPosition('right')
                 ->uploadButtonPosition('left')
                 ->uploadProgressIndicatorPosition('left'),
-                
+
                 Forms\Components\TextInput::make('first_name')
                     ->required()
                     ->maxLength(255),
