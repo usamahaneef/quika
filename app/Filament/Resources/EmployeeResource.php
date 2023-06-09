@@ -56,7 +56,6 @@ class EmployeeResource extends Resource
                         }
                         return $state->city->pluck('name','id');
                     })
-                    ->reactive()->required()->searchable()
                     ->reactive()->required()->searchable(),
 
                 Forms\Components\Select::make('department_id')
